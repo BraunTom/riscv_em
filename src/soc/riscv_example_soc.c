@@ -7,6 +7,7 @@
 #include <riscv_example_soc.h>
 
 #include <file_helper.h>
+#include <inttypes.h>
 
 #define INIT_MEM_ACCESS_STRUCT(_ref_rv_soc, _entry, _bus_access_func, _priv, _addr_start, _mem_size) \
 { \
@@ -61,7 +62,7 @@ static rv_ret rv_soc_bus_access(void *priv, privilege_level priv_level, bus_acce
         }
     }
 
-    die_msg("Invalid Address, or no valid write pointer found, write not executed!: Addr: "PRINTF_FMT" Len: %d Cycle: %ld  PC: "PRINTF_FMT"\n", address, len, rv_soc->rv_core0.curr_cycle, rv_soc->rv_core0.pc);
+    die_msg("Invalid Address, or no valid write pointer found, write not executed!: Addr: "PRINTF_FMT" Len: %d Cycle: %" PRIu64 "  PC: "PRINTF_FMT"\n", address, len, rv_soc->rv_core0.curr_cycle, rv_soc->rv_core0.pc);
 }
 
 void rv_soc_dump_mem(rv_soc_td *rv_soc)
