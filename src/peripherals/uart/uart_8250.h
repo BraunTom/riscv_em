@@ -4,6 +4,7 @@
 #include <stdint.h>
 
 #include <fifo.h>
+#include <sys/types.h>
 
 #define UART_NS8250_NR_REGS 12
 #define UART_NS8250_FIFO_SIZE 16

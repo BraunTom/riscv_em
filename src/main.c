@@ -11,6 +11,7 @@
 #include <riscv_helper.h>
 #include <riscv_example_soc.h>
 #include <simple_uart.h>
+#include <inttypes.h>
 
 char getch() 
 {
@@ -146,7 +147,7 @@ static void parse_options(int argc,
 
     printf("FW file: %s\n", arg_fw_file);
     printf("Success PC: " PRINTF_FMT "\n", *success_pc);
-    printf("Num Cycles: %ld\n", *num_cycles);
+    printf("Num Cycles: %" PRIu64 "\n", *num_cycles);
 
     *fw_file = arg_fw_file;
     *dtb_file = arg_dtb_file;
