@@ -62,7 +62,7 @@ set(INC_SOC
     src/soc
 )
 
-add_library(riscv_em STATIC ${SRC_HELPER} ${SRC_CORE} ${SRC_PERIPH} ${SRC_SOC} src/riscv_em.c)
+add_library(riscv_em STATIC ${SRC_HELPER} ${SRC_CORE} ${SRC_PERIPH} ${SRC_SOC} src/main.c)
 # add_executable(riscv_em ${SRC_HELPER} ${SRC_CORE} ${SRC_PERIPH} ${SRC_SOC} src/main.c)
 target_include_directories(riscv_em PUBLIC . ${INC_HELPER} ${INC_CORE} ${INC_PERIPH} ${INC_SOC})
 target_compile_options(riscv_em PRIVATE -Wall -Wextra -pedantic -Werror)
